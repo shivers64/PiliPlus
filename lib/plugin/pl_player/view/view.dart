@@ -929,6 +929,9 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
   void didChangeDependencies() {
     super.didChangeDependencies();
     colorScheme = ColorScheme.of(context);
+    final gs = MediaQuery.maybeGestureSettingsOf(context);
+    _tapGestureRecognizer.gestureSettings = gs;
+    _doubleTapGestureRecognizer.gestureSettings = gs;
   }
 
   @override
@@ -1212,7 +1215,7 @@ class _PLVideoPlayerState extends State<PLVideoPlayer>
 
   StreamSubscription<bool>? _danmakuListener;
 
-  static const _kOffsetThreshold = 25.0;
+  static const _kOffsetThreshold = 8.0;
   bool _isPositionAllowed(Offset offset) {
     if (offset.dx < _kOffsetThreshold ||
         offset.dy < _kOffsetThreshold ||
