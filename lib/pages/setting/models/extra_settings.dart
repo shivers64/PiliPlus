@@ -564,7 +564,7 @@ List<SettingsModel> get extraSettings => [
     onTap: _showReplyDelayDialog,
   ),
   PopupModel(
-    title: '评论展示',
+    title: '评论区排序',
     leading: const Icon(Icons.whatshot_outlined),
     value: () => Pref.replySortType,
     items: ReplySortType.values.take(2),
@@ -573,7 +573,7 @@ List<SettingsModel> get extraSettings => [
         .whenComplete(setState),
   ),
   PopupModel(
-    title: '楼中楼评论展示',
+    title: '相关回复排序',
     leading: const Icon(Icons.subdirectory_arrow_right_outlined),
     value: () => Pref.reply2SortType,
     items: ReplySortType.values.take(2),
